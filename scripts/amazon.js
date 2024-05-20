@@ -1,5 +1,6 @@
-import {cart} from '/SOLUTIONS/data/cart.js';
+import {cart, addToCart} from '/SOLUTIONS/data/cart.js';
 import {products} from '/SOLUTIONS/data/products.js';
+
 
 let productsHTML= '';
 
@@ -60,45 +61,29 @@ products.forEach((product)=>{
 const addedMessageTimeOuts = {};
  document.querySelector('.js-products-grid').innerHTML = productsHTML
 
+    function addCartQuantity (){
+        let cartQuantity = 0;
+
+        cart.forEach((cartItem)=>{
+            cartQuantity+= cartItem.quantity;
+        });
+
+        document.querySelector('.js-cart-quantity').innerHTML =cartQuantity;
+
+    }
     document.querySelectorAll('.js-add-to-cart')
     .forEach((button)=>{
         button.addEventListener('click',()=>{
             
         const productId = button.dataset.productId ;
         
-        let matchingItem;
-        const quantities = document.querySelector(`.js-quantity-selector-${productId}`)
         
-
-        const quantitystring = quantities.value
-        let quatityNumber = Number(quantitystring)
         
+            addToCart(productId);
+            addCartQuantity ();
+            
 
-        cart.forEach((item)=> {
-            if (productId === item.productId){
-                matchingItem = item;
-            }
-        });
-
-        if (matchingItem) {
-            matchingItem.quantity += quatityNumber;
-        }else{
-            cart.push({
-            productId : productId,
-            quantity : quatityNumber
-        });
-        }
         
-
-
-        let cartQuantity = 0;
-
-        cart.forEach((item)=>{
-            cartQuantity+= item.quantity;
-        });
-
-        document.querySelector('.js-cart-quantity').innerHTML =cartQuantity;
-
         const added = document.querySelector(`.added-to-cart-id-${productId}`)
 
         added.classList.add('added-to-cart-visible')
@@ -110,7 +95,7 @@ const addedMessageTimeOuts = {};
             }
             const timeoutId = setTimeout(()=>{})
         },2000)
-        
+         
            
         
         
