@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://supersimplebackend.dev/documentation -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SuperSimpleDev Backend Documentation</title>
+    <link rel="stylesheet" href="./SuperSimpleDev Backend Documentation_files/documentation.css">
+  <style>
+        @font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
+</style></head>
+  <body>
+    <main>
+      <h1 class="title" id="title">Documentation Page</h1>
+      <div class="intro">
+        This page shows you how to use this backend.
+      </div>
+
+      <div class="section-title">
+        Intro
+      </div>
+      <div>
+        To use this backend, send an HTTP request to the URL:<br>https://supersimpledevbackend.dev
+      </div>
+
+      <div id="table-of-contents" class="section-title">
+        List of URL paths
+      </div>
+      <div>
+        Here is a list of URL paths that are supported by this backend.<br>
+        Each URL path gives a different response when you send a request to it.
+      </div>
+
+      <div class="endpoint-links">
+        <code>
+          <strong>
+            <a href="https://supersimplebackend.dev/documentation#get-slash">GET /</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-hello">GET /hello</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-products-first">GET /products/first</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-documentation">GET /documentation</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-images-apple">GET /images/apple.jpg</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-products">GET /products</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-cart">GET /cart</a><br>
+            <a href="https://supersimplebackend.dev/documentation#post-orders">POST /orders</a><br>
+            <a href="https://supersimplebackend.dev/documentation#get-greeting">GET /greeting</a><br>
+            <a href="https://supersimplebackend.dev/documentation#post-greeting">POST /greeting</a><br>
+          </strong>
+        </code>
+      </div>
+
+      <section class="endpoint-section">
+        <div id="get-slash" class="endpoint">
+          <div class="endpoint-name">
+            GET /
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns a string.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>Hello! This is SuperSimpleDev's backend.
+
+Documentation page:
+https://supersimplebackend.dev/documentation</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-hello" class="endpoint">
+          <div class="endpoint-name">
+            GET /hello
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns a string.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>This is the URL path /hello</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-products-first" class="endpoint">
+          <div class="endpoint-name">
+            GET /products/first
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns the first product in the Amazon project as a JSON string.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>{
+  "id": "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+  "image": "images/products/athletic-cotton-socks-6-pairs.jpg",
+  "name": "Black and Gray Athletic Cotton Socks - 6 Pairs",
+  "rating": {"stars": 4.5, "count": 87},
+  "priceCents": 1090,
+  "keywords": ["socks", "sports", "apparel"]
+}</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-documentation" class="endpoint">
+          <div class="endpoint-name">
+            GET /documentation
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns the HTML of the documentation page (the current page) as a string.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;SuperSimpleDev Backend Documentation&lt;/title&gt;
+    &lt;link rel="stylesheet" href="documentation.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1 class="title" id="title"&gt;Documentation Page&lt;/h1&gt;
+      ...
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-images-apple" class="endpoint">
+          <div class="endpoint-name">
+            GET /images/apple.jpg
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns an image of an apple.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <img src="./SuperSimpleDev Backend Documentation_files/apple.jpg">
+            
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-products" class="endpoint">
+          <div class="endpoint-name">
+            GET /products
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns the list of products in the Amazon project as a JSON string.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>[{
+  "id": "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+  "image": "images/products/athletic-cotton-socks-6-pairs.jpg",
+  "name": "Black and Gray Athletic Cotton Socks - 6 Pairs",
+  "rating": {
+    "stars": 4.5,
+    "count": 87
+  },
+  "priceCents": 1090,
+  "keywords": ["socks", "sports", "apparel"]
+}, {
+  "id": "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+  "image": "images/products/intermediate-composite-basketball.jpg",
+  "name": "Intermediate Size Basketball",
+  "rating": {
+    "stars": 4,
+    "count": 127
+  },
+  "priceCents": 2095,
+  "keywords": ["sports", "basketballs"]
+}
+...
+]</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-cart" class="endpoint">
+          <div class="endpoint-name">
+            GET /cart
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Loads a fake cart.
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>load cart</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="post-orders" class="endpoint">
+          <div class="endpoint-name">
+            POST /orders
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Takes a cart and creates a new order.
+          </div>
+          <div class="endpoint-request">
+            <strong>Request</strong><br>
+            In your request, send a cart array.
+            <code class="example-code">
+              <pre>{
+  cart: [{
+    productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+    quantity: 2,
+    deliveryOptionId: '1'
+  }, {
+    productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+    quantity: 1,
+    deliveryOptionId: '2'
+  }]
+}</pre>
+            </code>
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            Returns a new order object.
+            <code class="example-code">
+              <pre>{
+  "id": "0e3713e6-209f-4bef-a3e2-ca267ad830ea",
+  "orderTime": "2024-02-27T20:57:02.235Z",
+  "totalCostCents": 5800,
+  "products": [
+    {
+      "productId": "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+      "quantity": 2,
+      "estimatedDeliveryTime": "2024-03-01T20:57:02.235Z"
+    },
+    {
+      "productId": "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+      "quantity": 1,
+      "estimatedDeliveryTime": "2024-03-01T20:57:02.235Z"
+    }
+  ]
+}</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="get-greeting" class="endpoint">
+          <div class="endpoint-name">
+            GET /greeting
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns a greeting (string).
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>Hello!</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+
+        <div id="post-greeting" class="endpoint">
+          <div class="endpoint-name">
+            POST /greeting
+          </div>
+          <div class="endpoint-description">
+            <strong>Description</strong><br>
+            Returns a greeting (string).
+          </div>
+          <div class="endpoint-request">
+            <strong>Request</strong><br>
+            Send a JSON with a name property.
+            <code class="example-code">
+              <pre>{ name: "SuperSimpleDev" }</pre>
+            </code>
+          </div>
+          <div class="endpoint-response">
+            <strong>Response</strong><br>
+            <code class="example-code">
+              <pre>Hi SuperSimpleDev!</pre>
+            </code>
+          </div>
+          <a class="back-to-top-link" href="https://supersimplebackend.dev/documentation#title">
+            Back to top
+          </a>
+        </div>
+      </section>
+    </main>
+  
+
+</body></html>
