@@ -8,10 +8,13 @@ const today = dayjs();
  const deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM D'))
 
+
+
+
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem)=>{
-    const productId = cartItem.productId
+    const productId = cartItem.productId;
   
     let matchingproduct;
 
@@ -100,7 +103,7 @@ cart.forEach((cartItem)=>{
     
     `;
 });
-function deliveryOptions () {
+function deliveryOptionsHTML () {
   deliveryOptions.forEach((deliveryOption) =>{
     `
     <div class="delivery-options">
