@@ -1,8 +1,8 @@
 import {cart, removeFromCart , updateDeliveryOption} from '../../../SOLUTIONS/data/cart.js'
-import {products} from '../../../SOLUTIONS/data/products.js'
+import {products , getProduct} from '../../../SOLUTIONS/data/products.js'
 import {formatCurrency} from '../../../SOLUTIONS/utils/money.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
-import {deliveryOptions} from '../../../SOLUTIONS/data/deliveryOptions.js';
+import {deliveryOptions , getDeliveryOption} from '../../../SOLUTIONS/data/deliveryOptions.js';
  
  
 
@@ -16,25 +16,15 @@ export function renderOrderSummary(){
     cart.forEach((cartItem)=>{
         const productId = cartItem.productId;
       
-        let matchingproduct;
+        const matchingproduct= getProduct(productId)
 
-        products.forEach((product)=>{
-            if (product.id === productId){
-                matchingproduct = product;
-            }
-
-        });
-    
+        
         
         const deliveryOptionId = cartItem.deliveryOptionId;
 
-        let deliveryOption;
+        const deliveryOption= getDeliveryOption(deliveryOptionId);
 
-        deliveryOptions.forEach((option)=> {
-          if (option.id === deliveryOptionId){
-            deliveryOption = option;
-          }
-        });
+        
 
         const today = dayjs();
         const deliveryDate = today.add(
@@ -120,7 +110,7 @@ export function renderOrderSummary(){
                           ${dateString}
                         </div>
                         <div class="delivery-option-price">
-                          ${priceString}
+                          ${priceString} shipping
                         </div>
                       </div>
                     </div>
