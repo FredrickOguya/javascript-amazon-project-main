@@ -1,4 +1,3 @@
-
 describe('Player', function() {
   let player;
   let song;
