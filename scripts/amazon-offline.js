@@ -59,7 +59,7 @@ products.forEach((product)=>{
     `;
 })
 
-const addedMessageTimeOuts = {};
+const addedMessageTimeouts = {};
  document.querySelector('.js-products-grid').innerHTML = productsHTML
 
     function addCartQuantity (){
@@ -75,40 +75,29 @@ const addedMessageTimeOuts = {};
     document.querySelectorAll('.js-add-to-cart')
     .forEach((button)=>{
         button.addEventListener('click',()=>{
-            
-            
-
-        const productId = button.dataset.productId ;
-        
-        
-        
+            const productId = button.dataset.productId ;
             addToCart(productId);
             addCartQuantity ();
-            
-            
-
         
-        const added = document.querySelector(`.added-to-cart-id-${productId}`)
-
+            const added = document.querySelector(`.added-to-cart-id-${productId}`)
         added.classList.add('added-to-cart-visible')
-
         setTimeout(()=>{
-            const clearedTimeout = addedMessageTimeOuts;
-            if (clearedTimeout){
-                clearTimeout(clearedTimeout)
+            const previousTimeoutId = addedMessageTimeOuts[timeoutId] 
+            if (previousTimeoutId) {
+                clearTimeout(previousTimeoutId)
             }
-            const timeoutId = setTimeout(()=>{})
-        },2000)
-         
-           
+            const timeoutId = setTimeout(()=>{
+                added.classList.remove('added-cart-visible')
+            },2000)
+        })
+        addedMessageTimeouts[productId] = timeoutId       
         
         
-        addedMessageTimeOuts[productId] = setTimeout
-        
-
-        
-        });
-        
-        
-        
+        });       
     });
+    
+    
+
+    
+
+    
